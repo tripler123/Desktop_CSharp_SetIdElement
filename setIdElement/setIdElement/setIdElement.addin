@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Set Element ID</Text>
+    <FullClassName>setIdElement.setIdElement</FullClassName>
+    <Assembly>setIdElement.dll</Assembly>
+    <AddInId>
+      6b846f8d-5c61-45dc-9d92-94b350352316
+    </AddInId>
+    <VendorId>Área BIM - VDC </VendorId>
+    <VendorDescription>COSAPI, Inc. www.cosapi.com.pe</VendorDescription>
+  </AddIn>
+</RevitAddIns>
