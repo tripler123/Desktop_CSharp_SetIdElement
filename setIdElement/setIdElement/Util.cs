@@ -75,6 +75,7 @@ namespace setIdElement
             if (((BuiltInCategory)e.Category.Id.IntegerValue) == BuiltInCategory.OST_VolumeOfInterest) return false;
             if (((BuiltInCategory)e.Category.Id.IntegerValue) == BuiltInCategory.OST_SectionBox) return false;
             if (((BuiltInCategory)e.Category.Id.IntegerValue) == BuiltInCategory.OST_Materials) return false;
+            if (((BuiltInCategory)e.Category.Id.IntegerValue) == BuiltInCategory.OST_Lines) return false;
             return e.Category.CategoryType == CategoryType.Model && e.Category.CanAddSubcategory;
         }
 

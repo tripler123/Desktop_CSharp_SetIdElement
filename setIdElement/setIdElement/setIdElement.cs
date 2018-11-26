@@ -77,7 +77,7 @@ namespace setIdElement
 
                         TaskDialog.Show("Mensaje de Error", "El parametro no existe, " +
                                                             "verificar si la categoria del elemento" +
-                                                            " cuenta con el parameto");
+                                                            " cuenta con el parameto - " + e.Id.ToString());
                         return Result.Cancelled;
                     }
                 }
