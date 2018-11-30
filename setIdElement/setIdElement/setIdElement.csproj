@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportForm.designer.cs">
+      <DependentUpon>ExportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmParameterName.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     <None Include="setIdElement.addin" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ExportForm.resx">
+      <DependentUpon>ExportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmParameterName.resx">
       <DependentUpon>frmParameterName.cs</DependentUpon>
     </EmbeddedResource>

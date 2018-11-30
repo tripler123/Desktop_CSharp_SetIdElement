@@ -18,6 +18,7 @@ namespace setIdElement
     [Transaction(TransactionMode.Manual)]
     public class setIdElement : IExternalCommand
     {
+        public static int cantTotal;
         public static bool next { get; set; }
         public static string paramName { get; set; }
         public Result Execute(ExternalCommandData commandData,
@@ -40,47 +41,52 @@ namespace setIdElement
                 //Todos los elementos fisicos del proyecto
                 List<Element> allElements = Util.AllElement(doc);
                 var list = allElements.Select(item => item.Id).ToList();
-
+                cantTotal = allElements.Count;
                 int eModificados = 0;
-
-                foreach (Element e in allElements)
+                using (ExportForm pf = new ExportForm(cantTotal))
                 {
-                    if (e.LookupParameter(paramName) != null)
+                    foreach (Element e in allElements)
                     {
-                        if (e.LookupParameter(paramName).StorageType == StorageType.String)
+                        if (e.LookupParameter(paramName) != null)
                         {
-                            try
+                            if (e.LookupParameter(paramName).StorageType == StorageType.String)
                             {
-                                using (Transaction t = new Transaction(doc, "param"))
+                                try
                                 {
-                                    t.Start();
-                                    e.LookupParameter(paramName).Set(e.Id.ToString());
-                                    ++eModificados;
-                                    t.Commit();
+                                    using (Transaction t = new Transaction(doc, "param"))
+                                    {
+                                        t.Start();
+                                        e.LookupParameter(paramName).Set(e.Id.ToString());
+                                        ++eModificados;
+                                        t.Commit();
+                                    }
+                                    pf.Increment(cantTotal);
+                                }
+                                catch (Exception err)
+                                {
+                                    TaskDialog.Show("Mensaje de Error", err.ToString());
+                                    return Result.Cancelled;
                                 }
                             }
-                            catch (Exception err)
+                            else
                             {
-                                TaskDialog.Show("Mensaje de Error", err.ToString());
+                                TaskDialog.Show("Mensaje de Error", "El parametro no es de tipo String, " +
+                                                                "para poder ejecutar este addin el parametro debe ser de tipo String");
+                                return Result.Cancelled;
                             }
+
                         }
                         else
                         {
-                            TaskDialog.Show("Mensaje de Error", "El parametro no es de tipo String, " +
-                                                            "para poder ejecutar este addin el parametro debe ser de tipo String");
+
+                            TaskDialog.Show("Mensaje de Error", "El parametro no existe, " +
+                                                                "verificar si la categoria del elemento" +
+                                                                " cuenta con el parameto - " + e.Id.ToString());
                             return Result.Cancelled;
                         }
-                        
-                    }
-                    else
-                    {
-
-                        TaskDialog.Show("Mensaje de Error", "El parametro no existe, " +
-                                                            "verificar si la categoria del elemento" +
-                                                            " cuenta con el parameto - " + e.Id.ToString());
-                        return Result.Cancelled;
                     }
                 }
+
                 TaskDialog.Show("Mensaje de Finalización", eModificados.ToString() + " Fueron modificados de un total de " + allElements.Count.ToString());
             }
             else
