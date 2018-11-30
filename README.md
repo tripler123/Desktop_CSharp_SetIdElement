@@ -10,6 +10,10 @@ Puedes escribir el nombre del parametro donde deseas que se guarde el ID del ele
 
 ![parameter name](https://user-images.githubusercontent.com/28066727/48991504-20104a80-f101-11e8-9098-647ae777e020.png)
 
+## Barra de Progreso
+
+![progress bar](https://user-images.githubusercontent.com/28066727/49315659-73e1b180-f4bc-11e8-8fc1-0eb39b64e221.PNG)
+
 ## License
 
 This sample is licensed under the terms of the MIT License. Please see the LICENSE file for full details.
