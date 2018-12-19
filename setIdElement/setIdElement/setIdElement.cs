@@ -64,14 +64,14 @@ namespace setIdElement
                                 }
                                 catch (Exception err)
                                 {
-                                    TaskDialog.Show("Mensaje de Error", err.ToString());
+                                    TaskDialog.Show("Error Message", err.ToString());
                                     return Result.Cancelled;
                                 }
                             }
                             else
                             {
-                                TaskDialog.Show("Mensaje de Error", "El parametro no es de tipo String, " +
-                                                                "para poder ejecutar este addin el parametro debe ser de tipo String");
+                                TaskDialog.Show("Error Message", "The parameter is not string type \n" +
+                                                                "To be able to execute this add in the parameter must be of String type");
                                 return Result.Cancelled;
                             }
 
@@ -79,19 +79,19 @@ namespace setIdElement
                         else
                         {
 
-                            TaskDialog.Show("Mensaje de Error", "El parametro no existe, " +
-                                                                "verificar si la categoria del elemento" +
-                                                                " cuenta con el parameto - " + e.Id.ToString());
+                            TaskDialog.Show("Error Message", "There are elements that do not have the selected parameter, " +
+                                                             "Please check if the item has the parameter \n" +
+                                                             " Element ID:" + e.Id.ToString());
                             return Result.Cancelled;
                         }
                     }
                 }
 
-                TaskDialog.Show("Mensaje de Finalización", eModificados.ToString() + " Fueron modificados de un total de " + allElements.Count.ToString());
+                TaskDialog.Show("Success", eModificados.ToString() + " were modified of " + allElements.Count.ToString() + " elements");
             }
             else
             {
-                TaskDialog.Show("Mensaje de Finalización", "No se Ejecuto el addin.");
+                TaskDialog.Show("Error Message", "Set Element ID did not run.");
             }     
             return Result.Succeeded;
         }

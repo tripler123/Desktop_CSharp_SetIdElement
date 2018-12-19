@@ -31,7 +31,7 @@ namespace setIdElement
         {
 
             pgbProceso.Value = pgbProceso.Value + 1;
-            txtCount.Text = pgbProceso.Value.ToString() + " de " + cantTotal.ToString() + " elementos";
+            txtCount.Text = pgbProceso.Value.ToString() + " of " + cantTotal.ToString() + " elements";
             Application.DoEvents();         
             
         }

@@ -39,7 +39,7 @@
             // pgbProceso
             // 
             this.pgbProceso.Location = new System.Drawing.Point(103, 86);
-            this.pgbProceso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pgbProceso.Margin = new System.Windows.Forms.Padding(4);
             this.pgbProceso.Name = "pgbProceso";
             this.pgbProceso.Size = new System.Drawing.Size(351, 28);
             this.pgbProceso.TabIndex = 0;
@@ -65,15 +65,15 @@
             this.label1.Location = new System.Drawing.Point(105, 68);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 15);
+            this.label1.Size = new System.Drawing.Size(68, 15);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Modificando parámetros ...";
+            this.label1.Text = "Saving ID...";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(17, 54);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(79, 54);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -91,7 +91,7 @@
             this.Controls.Add(this.txtCount);
             this.Controls.Add(this.pgbProceso);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ExportForm";
