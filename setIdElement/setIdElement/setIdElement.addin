@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RevitAddIns>
-  <AddIn Type="Command">
-    <Text>Set Element ID</Text>
-    <FullClassName>setIdElement.setIdElement</FullClassName>
+  <AddIn Type="Application">
+    <Name>Set Element ID</Name>
+    <!-- Add various controls to the Revit ribbon. -->
     <Assembly>setIdElement.dll</Assembly>
-    <AddInId>
-      6b846f8d-5c61-45dc-9d92-94b350352316
-    </AddInId>
-    <VendorId>Área BIM - VDC </VendorId>
+    <FullClassName>setIdElement.App</FullClassName>
+    <ClientId>6b846f8d-5c61-45dc-9d92-94b350352316</ClientId>
+    <VendorId>Área BIM - VDC</VendorId>
     <VendorDescription>360 Gestion de Proyectos, https://tripler123.github.io/360GESPRO/ </VendorDescription>
   </AddIn>
 </RevitAddIns>
+
+
