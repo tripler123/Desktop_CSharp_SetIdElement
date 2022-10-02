@@ -111,7 +111,6 @@
             this.Controls.Add(this.txtNameParam);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmParameterName";
-            this.Load += new System.EventHandler(this.frmParameterName_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -29,7 +29,6 @@ namespace setIdElement
 
         public void Increment(int cantTotal)
         {
-
             pgbProceso.Value = pgbProceso.Value + 1;
             txtCount.Text = pgbProceso.Value.ToString() + " of " + cantTotal.ToString() + " elements";
             Application.DoEvents();         
