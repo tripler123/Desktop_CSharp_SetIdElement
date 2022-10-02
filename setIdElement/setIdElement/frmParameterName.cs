@@ -12,26 +12,36 @@ namespace setIdElement
 {
     public partial class frmParameterName : Form
     {
+        private bool okPressed { get; set; }
+        private string paramName { get; set; }
+
+        public string ParamName
+        {
+            get { return paramName; }
+        }
+
+        public bool OkPressed
+        {
+            get { return okPressed; }
+        }
+
+
         public frmParameterName()
         {
             InitializeComponent();
         }
 
-        private void frmParameterName_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            setIdElement.next = true;
-            setIdElement.paramName = txtNameParam.Text;
+            okPressed = true;
+            paramName = txtNameParam.Text;
             Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            setIdElement.next = false;
+            okPressed = false;
             Close();
         }
     }
